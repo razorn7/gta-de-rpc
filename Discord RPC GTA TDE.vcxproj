@@ -150,7 +150,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Razor\Desktop\discord GTA DE\Discord SDK\include;C:\Users\Razor\GTA-TDE-UE4-SDK\iii_sdk_lib;C:\Users\Razor\GTA-TDE-UE4-SDK\sa_sdk_lib;C:\Users\Razor\GTA-TDE-UE4-SDK\vc_sdk_lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Razor\Desktop\discord GTA DE\Discord SDK\C---Discord-RPC\TutDiscord\Discord SDK\include;C:\Users\Razor\GTA-TDE-UE4-SDK\iii_sdk_lib;C:\Users\Razor\GTA-TDE-UE4-SDK\sa_sdk_lib;C:\Users\Razor\GTA-TDE-UE4-SDK\vc_sdk_lib</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WINDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

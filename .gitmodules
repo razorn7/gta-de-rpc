@@ -1,3 +1,6 @@
 [submodule "C---Discord-RPC"]
 	path = C---Discord-RPC
 	url = https://github.com/dhanax26/C---Discord-RPC
+[submodule "Discord SDK/C---Discord-RPC"]
+	path = Discord SDK/C---Discord-RPC
+	url = https://github.com/dhanax26/C---Discord-RPC
