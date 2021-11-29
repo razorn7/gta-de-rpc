@@ -5,10 +5,13 @@
 
 class Discord {
 public:
+	int gameImage = 0;
+	int gameVersion = 0;
+	int currentState = 0;
+	time_t t_time;
+
 	void Initialize();
 	void Update();
+	void SetState(int stateID);
+	char const* ReturnAttribute(int attValue, int attID);
 };
-
-void setDiscordState(int stateID);
-void setGameVersion();
-void update();

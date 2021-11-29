@@ -1,3 +1,8 @@
+/*
+	File: versionmanager.hpp - Author: LemonHaze
+	https://github.com/LemonHaze420/GTA-TDE-UE4-SDK/blob/master/VersionManager.hpp
+*/
+
 #include "pch.h"
 #include "SDK.h"
 

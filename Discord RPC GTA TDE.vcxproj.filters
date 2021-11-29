@@ -39,6 +39,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="core.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Discord SDK\src\backoff.h">
@@ -58,6 +61,9 @@
     </ClInclude>
     <ClInclude Include="versionmanager.hpp">
       <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="core.hpp">
+      <Filter>Archivos de origen\Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

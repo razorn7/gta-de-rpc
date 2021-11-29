@@ -1,11 +1,17 @@
 #pragma once
 
-#include "SDK.h"
+#include <SDK.h>
+#include "core.hpp"
 #include "discord.hpp"
 
-Discord* g_Discord;
+#define CONSOLE_IN_RELEASE                // Enables console in Release configuration
+//#define NO_LOG_IN_RELEASE                 // Disables logging in Release (by default the Release config. will log to 'sdk.log' in the executable directory)
+//#define NO_LOG_IN_DEBUG                   // Disables logging in Debug
 
-#define MOD_STRING "Discord RPC for GTA Trilogy"
+Discord* g_Discord;
+Core* g_Core;
+
+#define MOD_STRING "Discord RPC for GTA TDE"
 
 using namespace CG;
 
@@ -14,11 +20,12 @@ static bool gThread = false;
 static AGTAGameMode* gGameMode = nullptr;
 static UGameterface* gInterface = nullptr;
 
-static void Thread()
-{
-    printf("Thread started!");
+static void Thread() {
+    printf("[>] Thread started!");
 
-    Sleep(60 * 1000);
+    Discord discord;
+
+    Sleep(60 * 2000); //2 min. to ensure if engine is running (for now).
 
     while (gThread) {
         if (!gGameMode) {
@@ -31,25 +38,15 @@ static void Thread()
         }
         if (gInterface) {
             printf("%s\n", gInterface->IsPlayingGame() ? "Playing game" : "Not playing game");
-            if (gInterface->CurrentMenu) {
-                printf("Current Menu: %s\n", gInterface->CurrentMenu->Name.GetName().c_str());
-
-                printf("Current Cutscene = %s", gInterface->CurrentCutscene.GetName().c_str());
-                //Sleep(5 * 1000);
-            }
             if (gInterface->IsPlayingGame() == false) {
-                setDiscordState(4);
-                printf("nao esta jogando");
-                //Sleep(5 * 1000);
+                discord.SetState(4);
             }
             else if (gInterface->IsPlayingGame() == true) {
                 if (!gInterface->CurrentMenu) {
-                    setDiscordState(3);
-                    //Sleep(5 * 1000);
+                    discord.SetState(3);
                 }
                 else if (gInterface->CurrentMenu) {
-                    setDiscordState(1);
-                    //Sleep(5 * 1000);
+                    discord.SetState(1);
                 }
             }
         }
@@ -57,36 +54,37 @@ static void Thread()
     }
 }
 
-void Attach()
-{
-
-    setGameVersion();
+void Attach() {
+    g_Core->DetectGameVersion();
 
     g_Discord->Initialize();
     g_Discord->Update();
 
+
+    Sleep(2 * 1000);   // 2sec. delay to ensure the engine is brought up before we run our code.
+
+#   if defined(_DEBUG) || defined(CONSOLE_IN_RELEASE)
     AllocConsole();
     freopen("CONIN$", "r", stdin);
     freopen("CONOUT$", "w", stdout);
     freopen("CONOUT$", "w", stderr);
     SetConsoleTitleA(MOD_STRING);
-    printf("Allocated console\n");
+    printf("[>] Allocated console\n");
+#   endif
 
     if (!InitSdk()) {
+        printf("[x] SDK couldn't be initialized!");
         gThread = false;
         return;
     }
-
-    printf("SDK initialized\n");
-
-    gThread = true;
-
-    Sleep(2000);
-    CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)&Thread, NULL, 0, NULL);
+    else {
+        printf("[>] SDK initialized");
+        gThread = true;
+        CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)&Thread, NULL, 0, NULL);
+    }
 }
 
-void Detach()
-{
+void Detach() {
     gThread = false;
 }
 
