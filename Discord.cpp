@@ -14,7 +14,8 @@ using namespace std;
 */
 int gameVersion = 3;
 int gameImage = 3;
-int currentState = 3;
+int currentState = 4;
+time_t t_time;
 
 /*
 *   0: Rich Presence IDs
@@ -75,6 +76,8 @@ void Discord::Initialize()
     DiscordEventHandlers Handle;
     memset(&Handle, 0, sizeof(Handle));
     Discord_Initialize(setAttributes(gameVersion, 0), &Handle, 1, NULL);
+
+    t_time = std::time(0);
 }
 
 void Discord::Update()
@@ -85,7 +88,7 @@ void Discord::Update()
     discordPresence.largeImageKey = setAttributes(gameImage, 1);
     discordPresence.details = setAttributes(currentState, 2);
     discordPresence.state = "The Definitive Editon";
-    discordPresence.startTimestamp = std::time(0);
+    discordPresence.startTimestamp = t_time;
 
     Discord_UpdatePresence(&discordPresence);
 }
@@ -97,7 +100,7 @@ void update() {
     discordPresence.largeImageKey = setAttributes(gameImage, 1);
     discordPresence.details = setAttributes(currentState, 2);
     discordPresence.state = "The Definitive Editon";
-    discordPresence.startTimestamp = std::time(0);
+    discordPresence.startTimestamp = t_time;
 
     Discord_UpdatePresence(&discordPresence);
 }

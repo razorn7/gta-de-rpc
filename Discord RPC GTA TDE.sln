@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Discord RPC for GTA DE", "TutDiscord.vcxproj", "{321D0719-F29F-40D8-AE7C-95AD8C1C625B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Discord RPC for GTA DE", "Discord RPC GTA TDE.vcxproj", "{321D0719-F29F-40D8-AE7C-95AD8C1C625B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E119BA77-A918-4EFD-B6F8-EFE54CCAADB7}
+		SolutionGuid = {DFB5F7ED-4E32-472B-B255-73B0E7025E75}
 	EndGlobalSection
 EndGlobal
