@@ -164,22 +164,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="core.cpp" />
     <ClCompile Include="Discord SDK\src\connection_win.cpp" />
     <ClCompile Include="Discord SDK\src\discord_register_win.cpp" />
     <ClCompile Include="Discord SDK\src\discord_rpc.cpp" />
     <ClCompile Include="Discord SDK\src\rpc_connection.cpp" />
     <ClCompile Include="Discord SDK\src\serialization.cpp" />
-    <ClCompile Include="Discord.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="includes\core.cpp" />
+    <ClCompile Include="includes\discord.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="core.hpp" />
     <ClInclude Include="Discord SDK\src\backoff.h" />
     <ClInclude Include="Discord SDK\src\msg_queue.h" />
     <ClInclude Include="Discord SDK\src\rpc_connection.h" />
     <ClInclude Include="Discord SDK\src\serialization.h" />
-    <ClInclude Include="Discord.hpp" />
+    <ClInclude Include="includes\core.hpp" />
+    <ClInclude Include="includes\discord.hpp" />
     <ClInclude Include="versionmanager.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

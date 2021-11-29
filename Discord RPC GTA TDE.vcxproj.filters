@@ -33,13 +33,13 @@
     <ClCompile Include="Discord SDK\src\serialization.cpp">
       <Filter>Archivos de origen\SDK</Filter>
     </ClCompile>
-    <ClCompile Include="Discord.cpp">
+    <ClCompile Include="includes\core.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="includes\discord.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="core.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,13 +56,13 @@
     <ClInclude Include="Discord SDK\src\serialization.h">
       <Filter>Archivos de origen\SDK</Filter>
     </ClInclude>
-    <ClInclude Include="Discord.hpp">
-      <Filter>Archivos de origen</Filter>
+    <ClInclude Include="includes\core.hpp">
+      <Filter>Archivos de origen\Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\discord.hpp">
+      <Filter>Archivos de origen\Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="versionmanager.hpp">
-      <Filter>Archivos de origen</Filter>
-    </ClInclude>
-    <ClInclude Include="core.hpp">
       <Filter>Archivos de origen\Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

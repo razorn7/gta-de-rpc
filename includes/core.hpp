@@ -1,3 +1,5 @@
+#pragma once
+
 class Core {
 public:
 	int Started = 0;

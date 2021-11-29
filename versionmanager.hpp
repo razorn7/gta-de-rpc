@@ -55,7 +55,7 @@ Version getGameVersion() {
 	uintptr_t base = reinterpret_cast<uintptr_t>(GetModuleHandleA(NULL));
 	if (base) {
 		// SA
-		if (!memcmp((void*)(base + SA_V01_00_VER_STRING), "\x2B\x00\x2B\x00\x55\x00\x45\x00", 8)) {
+		if (!memcmp((void*)(base + SA_V01_00_VER_STRING), "\x2B\x00\x2B\x00\x55\x00\x45\x00", 8)) { 
 			theVersion = Version::SA_V01_00;
 			printf("Detected version SA - V01.00\n");
 		}
