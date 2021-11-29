@@ -23,7 +23,7 @@ static UGameterface* gInterface = nullptr;
 static void Thread() {
     printf("[>] Thread started!");
 
-    Discord discord;s
+    Discord discord;
 
     Sleep(60 * 2000); //2 min. to ensure if engine is running (for now).
 
