@@ -19,7 +19,11 @@ static AGTAGameMode* gGameMode = nullptr;
 static UGameterface* gInterface = nullptr;
 
 static void Thread() {
+<<<<<<< HEAD
     printf("[>] Thread started!\n");
+=======
+    printf("[>] Thread started!");
+>>>>>>> 674376e97d83eda4746d67acccf47e68255e798a
 
     Sleep(60 * 2000); //2 min. to ensure if engine is running (for now).
 
@@ -68,14 +72,22 @@ void Attach() {
         return;
     }
     else {
+<<<<<<< HEAD
         printf("[>] SDK initialized\n");
+=======
+        printf("[>] SDK initialized");
+>>>>>>> 674376e97d83eda4746d67acccf47e68255e798a
 
         g_Core->DetectGameVersion();
 
         g_Discord->Initialize();
         g_Discord->Update();
 
+<<<<<<< HEAD
         printf("[i] Discord module initialized\n");
+=======
+        printf("Done");
+>>>>>>> 674376e97d83eda4746d67acccf47e68255e798a
         gThread = true;
         CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)&Thread, NULL, 0, NULL);
     }

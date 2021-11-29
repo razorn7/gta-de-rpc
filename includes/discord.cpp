@@ -66,8 +66,14 @@ string Discord::ReturnAttribute(int attValue, int attID) {
 void Discord::Initialize() {
     DiscordEventHandlers Handle;
 
+<<<<<<< HEAD:includes/discord.cpp
     memset(&Handle, 0, sizeof(Handle));
     Discord_Initialize(this->ReturnAttribute(gameVersion, 0).c_str(), &Handle, 1, NULL);
+=======
+    std::cout << "State: " << gameImage << std::endl;
+    memset(&Handle, 0, sizeof(Handle));
+    Discord_Initialize(this->ReturnAttribute(currentState, 0).c_str(), &Handle, 1, NULL);
+>>>>>>> 674376e97d83eda4746d67acccf47e68255e798a:Discord.cpp
     t_time = std::time(0);
 }
 
@@ -77,6 +83,10 @@ void Discord::Update() {
 
     discordPresence.largeImageKey = this->ReturnAttribute(gameImage, 1).c_str();
     discordPresence.details = this->ReturnAttribute(currentState, 2).c_str();
+<<<<<<< HEAD:includes/discord.cpp
+=======
+    discordPresence.state = "The Definitive Editon";
+>>>>>>> 674376e97d83eda4746d67acccf47e68255e798a:Discord.cpp
     discordPresence.startTimestamp = t_time;
 
     Discord_UpdatePresence(&discordPresence);
