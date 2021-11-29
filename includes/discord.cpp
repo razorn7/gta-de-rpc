@@ -1,14 +1,19 @@
 #include "Discord.hpp"
-#include "versionmanager.hpp"
+
 #include "core.hpp"
 #include <time.h>
 #include <chrono>
 #include <iostream>
+#include <string>
 using namespace std;
 
+int gameImage;
+int gameVersion;
+int currentState = 4;
+time_t t_time;
 #pragma once
 
-char const* Discord::ReturnAttribute(int attValue, int attID) {
+string Discord::ReturnAttribute(int attValue, int attID) {
     if (attID == 0) {
         switch (attValue) {
         case 1:
@@ -20,6 +25,8 @@ char const* Discord::ReturnAttribute(int attValue, int attID) {
         case 3:
             return "912513971267969064";
             break;
+        default:
+            return "913153009444327466";
         }
     }
     else if (attID == 1) {
@@ -37,7 +44,7 @@ char const* Discord::ReturnAttribute(int attValue, int attID) {
     }
     else if (attID == 2) {
         switch (attValue) {
-            this->currentState = attValue;
+            currentState = attValue;
         case 1:
             return "In Menu";
             break;
@@ -58,9 +65,9 @@ char const* Discord::ReturnAttribute(int attValue, int attID) {
 
 void Discord::Initialize() {
     DiscordEventHandlers Handle;
-    memset(&Handle, 0, sizeof(Handle));
-    Discord_Initialize(this->ReturnAttribute(this->gameVersion, 0), &Handle, 1, NULL);
 
+    memset(&Handle, 0, sizeof(Handle));
+    Discord_Initialize(this->ReturnAttribute(gameVersion, 0).c_str(), &Handle, 1, NULL);
     t_time = std::time(0);
 }
 
@@ -68,16 +75,15 @@ void Discord::Update() {
     DiscordRichPresence discordPresence;
     memset(&discordPresence, 0, sizeof(discordPresence));
 
-    discordPresence.largeImageKey = this->ReturnAttribute(this->gameImage, 1);
-    discordPresence.details = this->ReturnAttribute(this->currentState, 2);
-    discordPresence.state = "The Definitive Editon";
+    discordPresence.largeImageKey = this->ReturnAttribute(gameImage, 1).c_str();
+    discordPresence.details = this->ReturnAttribute(currentState, 2).c_str();
     discordPresence.startTimestamp = t_time;
 
     Discord_UpdatePresence(&discordPresence);
 }
 
 void Discord::SetState(int stateID) {
-    this->currentState = stateID;
+    currentState = stateID;
 
     this->Update();
 }
