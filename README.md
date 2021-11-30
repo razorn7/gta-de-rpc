@@ -14,3 +14,22 @@ This feature is under development, therefore there are likely to be bugs or any 
 * Download the latest version from our repository.
 * Extract the files to the `Gameface\Binaries\Win64` folder, as example: `C:\Games\GTA San Andreas - Definitive Edition\Gameface\Binaries\Win64`.
 * Run it and have fun.
+
+## Discord Rich Presence
+Below is some resource information:
+
+### States
+Events will be updated according to what the player is doing in the game.
+| Event name | Description |
+| :---: | --- |
+| `Just started the game` | It will be shown when the game starts and will update after 1 minute and 30 seconds |
+| `In Menu` | It will be shown when the player pause/acess the game main menu |
+| `Playing` | It will be shown when the player resume/is playing the game |
+
+### Small Key Images
+The RPC small icons will update according to the player's actions in the game, whether it is paused or playing.
+| Icon | Name | Description |
+| :---: | :---: | --- |
+| <img src="https://i.imgur.com/aB8bx49.png" width="30"> | Playing | It will be shown when the game is being played |
+| <img src="https://i.imgur.com/vNUZADF.png" width="30"> | Paused | It will be shown when the game is paused|
+
