@@ -33,6 +33,6 @@ Events will be updated according to what the player is doing in the game.
 The RPC small icons will update according to the player's actions in the game, whether it is paused or playing.
 | Icon | Name | Description |
 | :---: | :---: | --- |
-| <img src="https://i.imgur.com/aB8bx49.png" width="30"> | Playing | It will be shown when the game is being played |
-| <img src="https://i.imgur.com/vNUZADF.png" width="30"> | Paused | It will be shown when the game is paused|
+| <img src="https://i.imgur.com/1ILvjxn.png" width="30"> | Playing | It will be shown when the game is being played |
+| <img src="https://i.imgur.com/r4Shvg0.png" width="30"> | Paused | It will be shown when the game is paused|
 
