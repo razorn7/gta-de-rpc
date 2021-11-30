@@ -1,31 +1,27 @@
 #pragma once
 
-#include "SDK.h"
-#include "includes/core.hpp"
-#include "includes/discord.hpp"
+#include "SDK.h" // GTA TDE UE4 SDK
+#include "includes/core.hpp" // Include the core
+#include "includes/discord.hpp" // Include Discord RPC core
 
-#define CONSOLE_IN_RELEASE
-
-Core* g_Core;
-Discord* g_Discord;
+// #define CONSOLE_IN_RELEASE
 
 #define MOD_STRING "Discord RPC for GTA TDE"
 
 using namespace CG;
 
-static bool gThread = false;
+Core* g_Core;
+Discord* g_Discord;
 
+
+static bool gThread = false;
 static AGTAGameMode* gGameMode = nullptr;
 static UGameterface* gInterface = nullptr;
 
 static void Thread() {
-<<<<<<< HEAD
     printf("[>] Thread started!\n");
-=======
-    printf("[>] Thread started!");
->>>>>>> 674376e97d83eda4746d67acccf47e68255e798a
 
-    Sleep(60 * 2000); //2 min. to ensure if engine is running (for now).
+    Sleep(90 * 1000); //1 min and 30 sec. delay to ensure the engine is brought up before we run our code.
 
     while (gThread) {
         if (!gGameMode) {
@@ -33,11 +29,11 @@ static void Thread() {
                 gGameMode = gameMode;
         }
         if (gGameMode && !gInterface) {
-            if (gGameMode->GetGameterface())
+            if (gGameMode->GetGameterface()) 
                 gInterface = gGameMode->GetGameterface();
+            
         }
         if (gInterface) {
-            printf("%s\n", gInterface->IsPlayingGame() ? "Playing game" : "Not playing game");
             if (gInterface->IsPlayingGame() == false) {
                 g_Discord->SetState(4);
             }
@@ -46,25 +42,25 @@ static void Thread() {
                     g_Discord->SetState(3);
                 }
                 else if (gInterface->CurrentMenu) {
-                    g_Discord->SetState(1);
+                    g_Discord->SetState(2);
                 }
             }
         }
-        Sleep(5 * 1000);
+        Sleep(5 * 1000); // Update the state every 5 sec.
     }
 }
 
 void Attach() {
-    Sleep(2 * 1000);   // 2sec. delay to ensure the engine is brought up before we run our code.
+    Sleep(2 * 1000); // 2sec. delay to ensure the engine is brought up before we run our code.
   
-#   //if defined(_DEBUG) || defined(CONSOLE_IN_RELEASE)
+#if defined(CONSOLE_IN_RELEASE)
     AllocConsole();
     freopen("CONIN$", "r", stdin);
     freopen("CONOUT$", "w", stdout);
     freopen("CONOUT$", "w", stderr);
     SetConsoleTitleA(MOD_STRING);
     printf("[>] Allocated console\n");
-#  // endif
+#endif
 
     if (!InitSdk()) {
         printf("[x] SDK couldn't be initialized!\n");
@@ -72,22 +68,14 @@ void Attach() {
         return;
     }
     else {
-<<<<<<< HEAD
         printf("[>] SDK initialized\n");
-=======
-        printf("[>] SDK initialized");
->>>>>>> 674376e97d83eda4746d67acccf47e68255e798a
 
         g_Core->DetectGameVersion();
 
         g_Discord->Initialize();
         g_Discord->Update();
 
-<<<<<<< HEAD
         printf("[i] Discord module initialized\n");
-=======
-        printf("Done");
->>>>>>> 674376e97d83eda4746d67acccf47e68255e798a
         gThread = true;
         CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)&Thread, NULL, 0, NULL);
     }

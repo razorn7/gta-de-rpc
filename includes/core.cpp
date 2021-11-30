@@ -2,9 +2,7 @@
 #include "core.hpp"
 #include "..\versionmanager.hpp"
 
-extern int gameImage;
-extern int gameVersion;
-
+extern int gameImage, gameVersion;
 
 void Core::DetectGameVersion() {
     Version version = getGameVersion();
