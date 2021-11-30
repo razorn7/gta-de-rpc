@@ -10,6 +10,9 @@ The plugin was designed for the three games of the GTA Trilogy Definitive Editio
 
 This feature is under development, therefore there are likely to be bugs or any other instabilities, all reports/suggestions are welcome.
 
+## Review:
+![](https://i.imgur.com/8Jpu1v5.png)
+
 ## Setup/Installation
 * Download the latest version from our repository.
 * Extract the files to the `Gameface\Binaries\Win64` folder, as example: `C:\Games\GTA San Andreas - Definitive Edition\Gameface\Binaries\Win64`.
