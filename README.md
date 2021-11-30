@@ -11,7 +11,7 @@ The plugin was designed for the three games of the GTA Trilogy: The Definitive E
 This feature is under development, therefore there are likely to be bugs or any other instabilities, all reports/suggestions are welcome.
 
 ## Review:
-![](https://i.imgur.com/eRxVmDG.png)
+![](https://i.imgur.com/c8GAkeU.png)
 
 ## Setup/Installation
 * Download the latest version from our repository.
