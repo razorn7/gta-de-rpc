@@ -2,7 +2,7 @@
 
 A feature created to show your status/timestamp of any game in the GTA The Definitive Edition trilogy.
 
-This plugin was created in C++ based on the [GTA TDE UE4 SDK](https://github.com/LemonHaze420/GTA-TDE-UE4-SDK) and [TutDiscord](https://github.com/dhanax26/C---Discord-RPC/tree/master/TutDiscord).
+This plugin was created in C++ based on the [GTA TDE UE4 SDK](https://github.com/LemonHaze420/GTA-TDE-UE4-SDK) and [TutDiscord](https://github.com/dhanax26/C---Discord-RPC/tree/master/TutDiscord), credits: [LemonHaze](https://github.com/LemonHaze420)
 
 ## Documentation
 
