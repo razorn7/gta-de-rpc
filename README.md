@@ -1,4 +1,4 @@
-# Discord RPC for GTA TDE
+# Discord RPC for GTA TDE (Outdated)
 
 A feature created to show your status/timestamp of any game in the GTA The Definitive Edition trilogy.
 
